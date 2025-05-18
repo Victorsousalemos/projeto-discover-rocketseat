@@ -1,0 +1,177 @@
+/* TUDO O QUE MEXE NO CSS NÃO EXISTE SÓ UMA MANEIRA, O JEITO CERTO É O JEITO QUE RESOLVE */
+
+* {
+  /* * é um seletor universal, o que eu colocar aqui vai tirar de todos os elementos da pagina */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* box-sizing = medida do tamanho da borda, nesse caso ela sera medida pela borda da caixa */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg); /* irá colocar a imagem da pasta no site */
+  /* background-repeat: no-repeat; quando colocar a imagem, ela ficará repetida, com esse codigo ela ficará em uma só, não ira repetir */
+  /* background-position: center; irá centralizar a imagem no meio da tela */
+  /* background-size: cover;   irá preencher toda a tela com a imagem */
+
+  /*
+
+  /* iremos agrupar todos essas linhas acima em uma só */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+
+  /* CSS geralmente não insere altura, pois ela acompanha o conteúdo da pagina */
+}
+
+/* Profile */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+/* elemento img é elemento inline, não consigo aplicar margin = auto, pra aplicar preciso colocar display = block ou inline-block
+ mas todos os elementos inline permite que o pai dele (nesse caso abaixo seria o profile, consiga aplicar um text-align = center*/
+#profile img {
+  width: 112px;
+}
+
+#profi
+
+#profile p {
+  font-weight: 400px; /* peso da fonte, tipo negrito, a cor */
+  line-height: 24px; /* altura da linha */
+  margin-top: 8px;
+}
+
+/* Switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4pc);
+  border-radius: 9999px;
+}
+
+/* Links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /*espaço entre as linhas, não da em cima nem em baixo, só entre as linhas */
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center; /*alinhar os itens no centro */
+  justify-content: center;
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /* arredondamento de bordas */
+
+  backdrop-filter: blur(4px); /* insere uma transparência, um blur */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* precisa usar essa linha do webkit quando usar backdrop-filter pois alguns navegadores não aceitam */
+
+  text-decoration: none; /* usa esse pra colocar linha embaixo da frase, em cima, no meio */
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/* pseudo-selector são uma forma de selecionar elementos HTML com base em seu estado ou posição em relação a outros elementos.*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
