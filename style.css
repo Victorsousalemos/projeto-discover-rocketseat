@@ -29,7 +29,7 @@
 body {
   /*
   background-image: url(./assets/bg-mobile.jpg); /* irá colocar a imagem da pasta no site */
-  /* background-repeat: no-repeat; quando colocar a imagem, ela ficará repetida, com esse codigo ela ficará em uma só, não ira repetir */
+  /* background-repeat: no-repeat; quando colocar a imagem, ela ficará repetida, com esse código ela ficará em uma só, não ira repetir */
   /* background-position: center; irá centralizar a imagem no meio da tela */
   /* background-size: cover;   irá preencher toda a tela com a imagem */
 
@@ -65,7 +65,7 @@ body * {
   width: 112px;
 }
 
-#profi #profile p {
+#profile p {
   font-weight: 400px; /* peso da fonte, tipo negrito, a cor */
   line-height: 24px; /* altura da linha */
   margin-top: 8px;
